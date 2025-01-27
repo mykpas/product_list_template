@@ -1,0 +1,17 @@
+{
+    "editor.fontSize": 12,
+    "debug.console.fontSize": 12,
+    "scm.inputFontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "chat.editor.fontSize": 12,
+    "markdown.preview.fontSize": 12,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./order",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
+}

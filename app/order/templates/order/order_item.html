@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container-fluid px-4 py-5 mb-5 text-center">
+    <div class="table-responsive">
+        
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NAME</th>
+              <th scope="col">CODE</th>
+              <th scope="col">quantity</th>
+              <th scope="col">Header</th>
+            </tr>
+          </thead>
+          <tbody>
+  
+            {% for item in orderItem %}
+            <tr>
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.code}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.date}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+  
+{% endblock content %}

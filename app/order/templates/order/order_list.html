@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid px-4 py-5 mb-5 text-center">
+    <div class="table-responsive">
+      <h1 class="h2">Product List</h1>
+
+        {% for o in orderList %}
+        <a href="{% url 'order:order_item' o.id %}">
+            <ul class="list-inline">
+                <li class="list-inline-item">{{o.date}}</li>
+                <li class="list-inline-item">{{o.invoce}}</li>
+                <li class="list-inline-item">{{o.car_brand}}</li>
+                <li class="list-inline-item">{{o.car_model}}</li>
+            </ul>
+            {% endfor %}
+        </a>
+    </div>
+  </div>
+  
+{% endblock content %}
