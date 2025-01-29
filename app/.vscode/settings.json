@@ -1,10 +1,10 @@
 {
-    "editor.fontSize": 12,
-    "debug.console.fontSize": 12,
-    "scm.inputFontSize": 12,
-    "terminal.integrated.fontSize": 12,
-    "chat.editor.fontSize": 12,
-    "markdown.preview.fontSize": 12,
+    "editor.fontSize": 14,
+    "debug.console.fontSize": 14,
+    "scm.inputFontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "chat.editor.fontSize": 14,
+    "markdown.preview.fontSize": 14,
     "python.testing.unittestArgs": [
         "-v",
         "-s",

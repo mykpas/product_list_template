@@ -2,21 +2,37 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid px-4 py-5 mb-5 text-center">
-    <div class="table-responsive">
-      <h1 class="h2">Product List</h1>
-
+<div class="container  p-5 m-5 ">
+   <table class="table table-striped table-sm table-hover">
+     <thead>
+       <tr>
+         <th scope="col">Date</th>
+         <th scope="col">Invoce</th>
+         <th scope="col">Brand</th>
+         <th scope="col">Model</th>
+       </tr>
+     </thead>
+     <tbody>
         {% for o in orderList %}
-        <a href="{% url 'order:order_item' o.id %}">
-            <ul class="list-inline">
-                <li class="list-inline-item">{{o.date}}</li>
-                <li class="list-inline-item">{{o.invoce}}</li>
-                <li class="list-inline-item">{{o.car_brand}}</li>
-                <li class="list-inline-item">{{o.car_model}}</li>
-            </ul>
-            {% endfor %}
-        </a>
-    </div>
+            <a href="{% url "order:order_item" o.id  %}">
+                <tr>
+                    <td>{{o.date}}</td>
+                    <td> 00{{o.invoce}}-SO</td>
+                    <td>{{o.car_brand}}</td>
+                    <td>{{o.car_model}}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{% url "order:order_item" o.id  %}">view
+                        </a>
+                    </td>
+                </tr>
+            </a>
+         {% endfor %}
+    </tbody>
+   </table>
+   
+
+    
   </div>
+  
   
 {% endblock content %}

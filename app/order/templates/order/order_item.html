@@ -3,9 +3,13 @@
 
 
 {% block content %}
-<div class="container-fluid px-4 py-5 mb-5 text-center">
+<div class="container px-4 p-5 m-5">
+    <dir class="bg-light p-2 list-inline d-flex justify-content-between">
+        <h5 class="text-success list-inline-item">Invoce: 00{{order_title.invoce}}-SO</h5>
+        <h5 class="text-success list-inline-item">Car: {{order_title.car_brand}} {{order_title.car_model}}</h5>
+        <h5 class="text-success list-inline-item">{{order_title.date}}</h5>  
+    </dir>
     <div class="table-responsive">
-        
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -13,7 +17,6 @@
               <th scope="col">NAME</th>
               <th scope="col">CODE</th>
               <th scope="col">quantity</th>
-              <th scope="col">Header</th>
             </tr>
           </thead>
           <tbody>
@@ -21,10 +24,9 @@
             {% for item in orderItem %}
             <tr>
               <td>{{item.id}}</td>
-              <td>{{item.name}}</td>
-              <td>{{item.code}}</td>
+              <td>{{item.product}}</td>
+              <td>{{item.serial}}</td>
               <td>{{item.quantity}}</td>
-              <td>{{item.date}}</td>
             </tr>
             {% endfor %}
           </tbody>

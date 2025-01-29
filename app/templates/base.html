@@ -1,4 +1,6 @@
 
+{% load static %}
+{% load goods_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +26,24 @@
               >
             </li>
             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" 
+                href="#"  
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">Category
+              </a>
+              <ul class="dropdown-menu">
+                {% tag_categories as categories %}
+                {% for category in categories %}
+                <li><a class="dropdown-item" href="{% url "goods:index" category.slug %}">{{ category.name}}</a></li>
+                {% endfor %}
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{% url "goods:index" 'all' %}">All Category</a>
+                </li>
+              </ul>
+            </li> 
+            <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -34,7 +54,7 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url "order:order" %}">order</a></li>
+                <li><a class="dropdown-item" href="{% url "order:order" %}">createorder</a></li>
                 <li><a class="dropdown-item" href="{% url "order:order_list" %}">order list</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
@@ -65,7 +85,7 @@
     {% block content %}{% endblock content %}
     <!-- end content -->
     <!-- footer -->
-    <div class="container-fluid float-end">
+    {% comment %} <div class="container-fluid position-absolute bottom-0">
       <footer
         class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
       >
@@ -104,7 +124,7 @@
           </li>
         </ul>
       </footer>
-    </div>
+    </div> {% endcomment %}
     <!-- end footer -->
 
     <script
@@ -112,5 +132,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script  src="{% static 'js/onclick.js' %}"></script>
   </body>
 </html>
