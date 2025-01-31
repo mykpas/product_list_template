@@ -1,10 +1,14 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Order, OrderList
+from .models import CarBrand, CarModel, Order, OrderHead
 
 admin.site.register(Order)
 
-admin.site.register(OrderList)
+admin.site.register(OrderHead)
+
+admin.site.register(CarBrand)
+
+admin.site.register(CarModel)
 
 

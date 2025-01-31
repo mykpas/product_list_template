@@ -11,7 +11,7 @@
                     <div class="card-body text-wrap">
                         <h5 class="card-title ">{{prod.name}} всего {{prod.quantity}}</h5>
                         <p class="card-text">{{prod.code}}</p>
-                        <a href="#" class="btn btn-primary">ADD</a>
+                        <a href="{% url "order:order_add" prod.slug %}" class="btn btn-primary">ADD</a>
                     </div>
                 </div>
             </a>
